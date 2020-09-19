@@ -21,7 +21,7 @@ const questions = [
         answer: "usageInfo",
     },
     {
-        prompt: "What is the license for the project?",
+        prompt: "What is the license for the project?",//do we put choices here? or not?
         answer: "license",
     },
     {
@@ -37,8 +37,12 @@ const questions = [
         answer: "username",
     },
     {
-        prompt: "Finally, what is your email?",
+        prompt: "What is your email?",
         answer: "email",
+    },
+    {
+        prompt: "Lastly, are there any special instructions you would like to add for the users?",
+        answer: "specialInstructions"
     }
 
 ];
