@@ -1,10 +1,7 @@
 // array of questions for user
 const questions = [
     {
-        prompt: "Let's create your README!"
-    },
-    {
-        prompt: "What is the title of the project?",
+        prompt: "Let's create your README! What is the title of the project?",
         answer: "title",
     },
     {
