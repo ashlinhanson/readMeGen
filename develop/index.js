@@ -29,8 +29,14 @@ inquirer
         answer: "usageInfo",
     },
     {
-        prompt: "What is the license for the project?",//do we put choices here? or not?
-        answer: "license",
+        type: "list",
+        prompt: "What license would you like to use?",//do we put choices here? or not?
+        answer: "licenseOptions",
+        options: ['GNU GPLv3', 'MIT', 'Boost Software License 1.0', 'Mozilla Public License 2.0', 'Apache License 2.0', 'The Unlicense'],
+    },
+    {
+        message: 'What year and full name do you want to appear on your license? (format "yyyy First Last")',
+        name: 'licenseInfo'
     },
     {
         prompt: "What are the contribution guidelines for this project?",
@@ -57,7 +63,38 @@ inquirer
 
 .then(answers => {
     //compile all the users answers
-    const {title, description, technologies, tableOfContents, installationInstructions, usageInfo, license, contribution, testInstructions, username, email, specialInstructions} = userAnswers
+    const {title, description, technologies, tableOfContents, installationInstructions, usageInfo, licenseOptions, contribution, testInstructions, username, email, specialInstructions} = userAnswers
+
+    let license = "";
+    let badge = "",
+
+    //license options
+    switch (licenseOptions){
+        case "GNU GPLv3" :
+            license = `Copyright (c) ${licenseInfo} Licensed under the GNU GPLv3 license.`;
+            badge = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+            break;
+        case "MIT":
+            license : `Copyright (c) ${licenseInfo} Licensed under the MIT license.`;
+            badge: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+            break;
+        case "Boost Software License 1.0":
+            license: `Copyright (c) ${licenseInfo} Licensed under the Boost Software license.`;
+            badge: "";
+            break;
+        case "Mozilla Public License 2.0":
+            license : `Copyright (c) ${licenseInfo} Licensed under the Mozilla Public license.`;
+            badge: "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
+            break;
+        case "Apache License 2.0":
+            license: `Copyright (c) ${licenseInfo} Licensed under the Apache license.`;
+            badge: "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+            break;
+        case "The Unlicense":
+            license: `Copyright (c) ${licenseInfo} Licensed under the Unlicense license.`;
+            badge: "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)";
+            break;
+    }
 })
 
 // function to write README file
