@@ -80,7 +80,7 @@ inquirer
             break;
         case "Boost Software License 1.0":
             license: `Copyright (c) ${licenseInfo} Licensed under the Boost Software license.`;
-            badge: "";
+            badge: "[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)";
             break;
         case "Mozilla Public License 2.0":
             license : `Copyright (c) ${licenseInfo} Licensed under the Mozilla Public license.`;
