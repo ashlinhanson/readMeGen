@@ -1,5 +1,9 @@
-// array of questions for user
-const questions = [
+const inquirer = require("inquirer");
+const fs = require("fs");
+
+//questions for user to answer about their project
+inquirer
+.prompt([
     {
         prompt: "Let's create your README! What is the title of the project?",
         answer: "title",
@@ -49,7 +53,12 @@ const questions = [
         answer: "specialInstructions"
     }
 
-];
+])
+
+.then(answers => {
+    //compile all the users answers
+    const {title, description, technologies, tableOfContents, installationInstructions, usageInfo, license, contribution, testInstructions, username, email, specialInstructions} = userAnswers
+})
 
 // function to write README file
 function writeToFile(fileName, data) {
