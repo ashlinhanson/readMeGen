@@ -9,6 +9,10 @@ const questions = [
         answer: "description",
     },
     {
+        prompt: "What technologies were used to create this project?",
+        answer: "technologies",
+    },
+    {
         prompt: "What is the table of contents for the project?",
         answer: "tableOfContents",
     },
