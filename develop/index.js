@@ -63,11 +63,10 @@ inquirer
 
 .then(answers => {
     //compile all the users answers
-    const {title, description, technologies, tableOfContents, installationInstructions, usageInfo, licenseOptions, contribution, testInstructions, username, email, specialInstructions} = userAnswers
+    const {title, description, technologies, tableOfContents, installationInstructions, usageInfo, licenseOptions, licenseInfo, contribution, testInstructions, username, email, specialInstructions} = userAnswers
 
     let license = "";
-    let badge = "",
-
+    let badge = "";
     //license options
     switch (licenseOptions){
         case "GNU GPLv3" :
