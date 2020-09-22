@@ -17,10 +17,6 @@ inquirer
         answer: "technologies",
     },
     {
-        prompt: "What is the table of contents for the project?",
-        answer: "tableOfContents",
-    },
-    {
         prompt: "What are the installation instructions for your project?",
         answer: "installationInstructions",
     },
@@ -63,7 +59,7 @@ inquirer
 
 .then(answers => {
     //compile all the users answers
-    const {title, description, technologies, tableOfContents, installationInstructions, usageInfo, licenseOptions, licenseInfo, contribution, testInstructions, username, email, specialInstructions} = userAnswers
+    const {title, description, technologies, installationInstructions, usageInfo, licenseOptions, licenseInfo, contribution, testInstructions, username, email, specialInstructions} = userAnswers
 
     let license = "";
     let badge = "";
