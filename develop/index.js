@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const { clear } = require("console");
 
 //questions for user to answer about their project
     inquirer
