@@ -94,10 +94,10 @@ const fs = require("fs");
 
 // function to write README file
 function generateMarkdown(answers) {
-    return `# ${title} ${badge} \n ${description} \n ## Table of Contents \n * [Installation Instructions](#Installation-Instructions) \n * [Instructions for Use](#Instructions-for-Use) \n * [Contribution Guidelines](#Contribution-Guidelines) \n * [Testing Instructions](#Testing-Instructions) \n * [Questions](#Questions) \n * [License](#License) \n ## Installation Instructions \n ${installationInstructions} \n ## Instructions for Use \n ${usageInfo} \n ## Contribution Guidelines  \n ${contribution} \n ## Testing Instructions \n ${testInstructions} \n ## Questions  \n * Github Username: ${username} \n * Email: ${email} \n * How to contact: ${contactInstructions} \n ## License \n ${license}`;
+    return `# ${title} \n ${description} \n ## Table of Contents \n * [Installation Instructions](#Installation-Instructions) \n * [Instructions for Use](#Instructions-for-Use) \n * [Contribution Guidelines](#Contribution-Guidelines) \n * [Testing Instructions](#Testing-Instructions) \n * [Questions](#Questions) \n * [License](#License) \n ## Installation Instructions \n ${installationInstructions} \n ## Instructions for Use \n ${usageInfo} \n ## Contribution Guidelines  \n ${contribution} \n ## Testing Instructions \n ${testInstructions} \n ## Questions  \n * Github Username: ${username} \n * Email: ${email} \n * How to contact: ${contactInstructions} \n ## License  ${badge} \n ${license}`;
 };
 
-// function to initialize program
+//
 fs.writeFile('ExampleREADME.md', generateMarkdown(answers), function(err){
     if (err) {
         return console.log(err);
