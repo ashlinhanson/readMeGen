@@ -2,57 +2,57 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 
 //questions for user to answer about their project
-    inquire
+    inquirer
     .prompt([
     {
-        prompt: "Let's create your README! What is the title of the project?",
-        answer: "title",
+        message: "Let's create your README! What is the title of the project?",
+        name: "title",
     },
     {
-        prompt: "What is the description of the project?",
-        answer: "description",
+        message: "What is the description of the project?",
+        name: "description",
     },
     {
-        prompt: "What technologies were used to create this project?",
-        answer: "technologies",
+        message: "What technologies were used to create this project?",
+        name: "technologies",
     },
     {
-        prompt: "What are the installation instructions for your project?",
-        answer: "installationInstructions",
+        message: "What are the installation instructions for your project?",
+        name: "installationInstructions",
     },
     {
-        prompt: "What is the usage information for the project",
-        answer: "usageInfo",
+        message: "What is the usage information for the project",
+        name: "usageInfo",
     },
     {
         type: "list",
-        prompt: "What license would you like to use?",//do we put choices here? or not?
-        answer: "licenseOptions",
-        options: ['GNU GPLv3', 'MIT', 'Boost Software License 1.0', 'Mozilla Public License 2.0', 'Apache License 2.0', 'The Unlicense'],
+        message: "What license would you like to use?",//do we put choices here? or not?
+        name: "licenseOptions",
+        choices: ['GNU GPLv3', 'MIT', 'Boost Software License 1.0', 'Mozilla Public License 2.0', 'Apache License 2.0', 'The Unlicense'],
     },
     {
         message: 'What year and full name do you want to appear on your license? (format "yyyy First Last")',
         name: 'licenseInfo'
     },
     {
-        prompt: "What are the contribution guidelines for this project?",
-        answer: "contribution",
+        message: "What are the contribution guidelines for this project?",
+        name: "contribution",
     },
     {
-        prompt: "What are the test instructions?",
-        answer: "testInstructions",
+        message: "What are the test instructions?",
+        name: "testInstructions",
     },
     {
-        prompt: "What is your GitHub username?",
-        answer: "username",
+        message: "What is your GitHub username?",
+        name: "username",
     },
     {
-        prompt: "What is your email?",
-        answer: "email",
+        message: "What is your email?",
+        name: "email",
     },
     {
-        prompt: "Lastly, how would you like to be contacted from a potential client?",
-        answer: "contactInstructions"
+        message: "Lastly, how would you like to be contacted from a potential client?",
+        name: "contactInstructions"
     }
 
 ])
@@ -60,7 +60,7 @@ const fs = require("fs");
 
 .then(answers => {
     //compile all the users answers
-    const {title, description, technologies, installationInstructions, usageInfo, licenseOptions, licenseInfo, contribution, testInstructions, username, email, contactInstructions} = userAnswers
+    const {title, description, technologies, installationInstructions, usageInfo, licenseOptions, licenseInfo, contribution, testInstructions, username, email, contactInstructions} = answers
 
     let license = "";
     let badge = "";
@@ -91,23 +91,18 @@ const fs = require("fs");
             badge = "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)";
             break;
     }
-});
+
 // function to write README file
 function generateMarkdown(answers) {
     return `# ${title} ${badge} \n ${description} \n ## Table of Contents \n * [Installation Instructions](#Installation-Instructions) \n * [Instructions for Use](#Instructions-for-Use) \n * [Contribution Guidelines](#Contribution-Guidelines) \n * [Testing Instructions](#Testing-Instructions) \n * [Questions](#Questions) \n * [License](#License) \n ## Installation Instructions \n ${installationInstructions} \n ## Instructions for Use \n ${usageInfo} \n ## Contribution Guidelines  \n ${contribution} \n ## Testing Instructions \n ${testInstructions} \n ## Questions  \n * Github Username: ${username} \n * Email: ${email} \n * How to contact: ${contactInstructions} \n ## License \n ${license}`;
 };
 
 // function to initialize program
-function init() {
-    try {
-        const userAnswers = await readmeQuestions();
-        generateReadme(answers);
-        writeToFile("README.md", generateReadme(answers));
-    } catch (err){
-        console.log(err);
+fs.writeFile('ExampleREADME.md', generateMarkdown(answers), function(err){
+    if (err) {
+        return console.log(err);
+    } else {
+        console.log("complete!")
     }
-
-};
-
-// function call to initialize program
-init();
+});
+});
