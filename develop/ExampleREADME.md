@@ -1,5 +1,5 @@
-# README Generator 
- This is an application where the user can put in information about their project and have a descriptive and complete README generated. 
+# Employee Management Template 
+ This application allows you to enter team members and their contact information to be generated in this template for max organization and easy retrieval of imperetive info during a team project.  
  ## Table of Contents 
  * [Installation Instructions](#Installation-Instructions) 
  * [Instructions for Use](#Instructions-for-Use) 
@@ -8,16 +8,16 @@
  * [Questions](#Questions) 
  * [License](#License) 
  ## Installation Instructions 
- Clone or fork files to your local machine. 
+ Fork or clone this to your own repository and then open it up in VSCode on your local machine. You will need to do an npm install to install the node modules to allow the application to work. Once everything is installed, navigate to your 'develop' folder and open it up in the Integrated Terminal. Once that is open in the correct folder, type "node app.js" and then follow the prompts accordingly. When it is completed, you can run a test to ensure the code is working properly and gets all the correct infomation by typing npm test. It will pass all tests and create your template for your team project. 
  ## Instructions for Use 
- 1. Open your terminal or gitbash (where your index.js is stored, specifically) 2. Run node index, then answer the prompts accordingly. 3. When completed you will either see "complete!" or an error message. 4. If "complete!" you will have an exampleREADME.md that will be created in your directory and will have all of the answers in README form. 5. If satisfied with the product, make it the projects README! 
+  
  ## Contribution Guidelines  
   
  ## Testing Instructions 
   
  ## Questions  
  * Github Username: ashlinhanson 
- * Email: ashlinhanson@example.com 
- * How to contact:  
+ * Email: ashlinhanson@gmail.com 
+ * How to contact: email 
  ## License  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
  Copyright (c) 2020 Ashli Hanson Licensed under the MIT license.
