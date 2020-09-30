@@ -24,6 +24,10 @@
  ![Example file](assets/exmapleREADMEfile.png)
  5. If satisfied with the product, make it the projects README!
  ![README Markdown Version](assets/readmeproduct.png)  
+
+ View the project live thanks to ScreenCastify: 
+[![Watch the video!](./assets/example.png)](https://drive.google.com/file/d/1FI_twYBZdcuuXXO1EYlA2AGniSLDMSzL/view "Watch a Live Example")
+   
   
  ## Questions  
  * Github Username: ashlinhanson 
