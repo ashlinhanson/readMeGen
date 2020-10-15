@@ -7,8 +7,6 @@
  ## Table of Contents 
  * [Installation Instructions](#Installation-Instructions) 
  * [Instructions for Use](#Instructions-for-Use) 
- * [Contribution Guidelines](#Contribution-Guidelines) 
- * [Testing Instructions](#Testing-Instructions) 
  * [Questions](#Questions) 
  * [License](#License) 
  ## Installation Instructions 
